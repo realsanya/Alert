@@ -38,8 +38,8 @@ class CustomAlertViewController: UIViewController {
     
     public var alertTitle: String!
     public var alertMessage: String!
-    public var axis: NSLayoutConstraint.Axis = .horizontal
     private var actions = [Action]()
+    public var axis: NSLayoutConstraint.Axis = .horizontal
     public var alertStyle = AlertStyle.light
     
     private lazy var backdropView: UIView = {
@@ -108,10 +108,11 @@ class CustomAlertViewController: UIViewController {
     
     
     // MARK: -initialize the alert
-    init(withTitle title: String?, message: String? = nil, axis: NSLayoutConstraint.Axis, style: AlertStyle = .light ){
+    init(withTitle title: String?, message: String? = nil, buttons: [Action], axis: NSLayoutConstraint.Axis, style: AlertStyle = .light ){
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title
         self.alertMessage = message
+        self.actions = buttons
         self.axis = axis
         self.alertStyle = style
         self.modalPresentationStyle = _modalPresentationStyle
@@ -122,10 +123,15 @@ class CustomAlertViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addAction(with text: String, style: ActionStyle, actionHandler: @escaping () -> Void){
-         let action = Action(with: text, style: style, actionHandler: actionHandler)
-         self.actions.append(action)
-     }
+    static func show(_ title:String, msg:String, style: AlertStyle? = .dark, buttons: [Action] = [ .normal(title: "Ok") ], handle: (( Action )->Void)? = nil ) -> UIViewController {
+        let alertVС  = CustomAlertViewController(withTitle: title, message: msg, buttons: buttons, axis: .horizontal, style: style ?? .light);
+        
+        return alertVС
+    }
+    
+    func didTapButton(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
 //MARK: -
     @objc private func animateAlert(){
@@ -163,10 +169,12 @@ class CustomAlertViewController: UIViewController {
         self.actionsStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 24.0).isActive = true
         self.actionsStackView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -24.0).isActive = true
         
-        for action in self.actions {
-            let actionButton = ActionButton(withAction: action)
-            actionButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-            actionsStackView.addArrangedSubview(actionButton)
+        for action in actions {
+            let actionButt = ActionButton( action: action, actionHandler: {
+                self.didTapButton()
+            })
+           
+            actionsStackView.addArrangedSubview( actionButt )
         }
         
         self.titleLabel.text = alertTitle
