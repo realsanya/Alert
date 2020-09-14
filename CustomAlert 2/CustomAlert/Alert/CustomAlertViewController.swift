@@ -21,19 +21,6 @@ class CustomAlertViewController: UIViewController {
     
     private var backdropView = BackdropView(frame: .null, backgroundColor: UIColor.black.withAlphaComponent(0.0), cornerRadius: 0.0)
     private var containerView = UIView()
-    
-//    private lazy var backdropView: UIView = {
-//        let view = BackdropView(frame: .null, backgroundColor: UIColor.black.withAlphaComponent(0.0), cornerRadius: 0.0)
-//        return view
-//    } ()
-    
-//    private lazy var containerView: UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = alertStyle.backgroundColor
-//        view.layer.cornerRadius = 10.0
-//        return view
-//        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
