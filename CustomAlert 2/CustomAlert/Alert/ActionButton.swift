@@ -40,7 +40,6 @@ class ActionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
     @objc private func didTapButton(){
         self.actionHandler?()
     }

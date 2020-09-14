@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E718BED2250B77580007CF93 /* AlertStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BED1250B77580007CF93 /* AlertStyle.swift */; };
 		E71B6FE524F6608100165C4E /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B6FE424F6608100165C4E /* BackdropView.swift */; };
 		E78A11D924F3B264004A15CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78A11D824F3B264004A15CD /* AppDelegate.swift */; };
 		E78A11DB24F3B264004A15CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78A11DA24F3B264004A15CD /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E718BED1250B77580007CF93 /* AlertStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStyle.swift; sourceTree = "<group>"; };
 		E71B6FE424F6608100165C4E /* BackdropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropView.swift; sourceTree = "<group>"; };
 		E78A11D524F3B264004A15CD /* CustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78A11D824F3B264004A15CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E70FF71F250FA40B001E9A79 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				E78A11DC24F3B264004A15CD /* ViewController.swift */,
+				E78A11DE24F3B264004A15CD /* Main.storyboard */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		E78A11CC24F3B264004A15CD = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +75,10 @@
 		E78A11D724F3B264004A15CD /* CustomAlert */ = {
 			isa = PBXGroup;
 			children = (
+				E70FF71F250FA40B001E9A79 /* MainVC */,
 				E78A11EC24F3B5ED004A15CD /* Alert */,
 				E78A11D824F3B264004A15CD /* AppDelegate.swift */,
 				E78A11DA24F3B264004A15CD /* SceneDelegate.swift */,
-				E78A11DC24F3B264004A15CD /* ViewController.swift */,
-				E78A11DE24F3B264004A15CD /* Main.storyboard */,
 				E78A11E124F3B265004A15CD /* Assets.xcassets */,
 				E78A11E324F3B265004A15CD /* LaunchScreen.storyboard */,
 				E78A11E624F3B265004A15CD /* Info.plist */,
@@ -81,6 +91,7 @@
 			children = (
 				E78A11ED24F3B639004A15CD /* Action.swift */,
 				E78A11F124F3BAB9004A15CD /* ActionButton.swift */,
+				E718BED1250B77580007CF93 /* AlertStyle.swift */,
 				E78A11F324F3BE66004A15CD /* CustomAlertViewController.swift */,
 				E71B6FE424F6608100165C4E /* BackdropView.swift */,
 			);
@@ -162,6 +173,7 @@
 				E71B6FE524F6608100165C4E /* BackdropView.swift in Sources */,
 				E78A11EE24F3B639004A15CD /* Action.swift in Sources */,
 				E78A11F424F3BE66004A15CD /* CustomAlertViewController.swift in Sources */,
+				E718BED2250B77580007CF93 /* AlertStyle.swift in Sources */,
 				E78A11D924F3B264004A15CD /* AppDelegate.swift in Sources */,
 				E78A11DB24F3B264004A15CD /* SceneDelegate.swift in Sources */,
 				E78A11F224F3BAB9004A15CD /* ActionButton.swift in Sources */,
